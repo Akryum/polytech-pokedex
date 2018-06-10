@@ -58,6 +58,8 @@ export default {
   font-weight lighter
 
 .preview
-  width 96px
+  width 192px
   height @width
+  >>> .image
+    image-rendering pixelated
 </style>
