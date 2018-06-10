@@ -1,12 +1,20 @@
 <template>
-  <div class="pokemon-list-item">
+  <router-link
+    class="pokemon-list-item"
+    :to="{
+      name: 'pokemon',
+      params: {
+        id: pokemon.id
+      }
+    }"
+  >
     <div class="name">{{ pokemon.name }}</div>
     <BaseImage
       :src="pokemon.image"
       :alt="`Pokemon ${pokemon.id}`"
       class="preview"
     />
-  </div>
+  </router-link>
 </template>
 
 <script>
@@ -32,6 +40,8 @@ export default {
   background $color-grey
   border-radius $br
   transition background .15s
+  color inherit
+  text-decoration none
   &:hover
     color $color-primary
     background $color-secondary
