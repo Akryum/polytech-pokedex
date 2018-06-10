@@ -1,19 +1,11 @@
 <template>
   <div id="app">
-    <PokemonList/>
+    <div id="nav">
+      <router-link to="/">Home</router-link>
+    </div>
+    <router-view/>
   </div>
 </template>
-
-<script>
-import PokemonList from './components/PokemonList.vue'
-
-export default {
-  name: 'app',
-  components: {
-    PokemonList
-  }
-}
-</script>
 
 <style lang="stylus">
 @import '~@/style/main'
