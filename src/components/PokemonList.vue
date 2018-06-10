@@ -16,7 +16,7 @@
 
 <script>
 import PokemonListItem from './PokemonListItem'
-import pokemons from '../assets/pokemons.json'
+import pokemons from '@/assets/pokemons.json'
 
 export default {
   components: {
