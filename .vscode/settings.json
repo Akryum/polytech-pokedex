@@ -5,5 +5,9 @@
     "javascriptreact",
     { "language": "vue", "autoFix": true },
     "graphql"
-  ]
+  ],
+  "path-autocomplete.pathMappings": {
+    "/": "${workspace}/src",
+    "@": "${workspace}/src"
+  }
 }
