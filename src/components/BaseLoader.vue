@@ -16,8 +16,8 @@
     width 24px
     height @width
     border solid 2px transparent
-    border-right-color $color-primary
-    border-bottom-color $color-primary
+    border-right-color lighten($color-primary, 60%)
+    border-bottom-color @border-right-color
     border-radius 50%
     animation animation .5s infinite linear
 
