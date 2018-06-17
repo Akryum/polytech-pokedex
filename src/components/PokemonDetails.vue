@@ -11,10 +11,15 @@
         :alt="`Pokemon ${pokemon.id}`"
         class="preview"
       />
+      <button
+        class="toggle-favorite"
+        @click="toggleFavorite()"
+      >
+        Toggle favorite
+      </button>
     </template>
-    <div v-else class="empty">
-      Pokemon not found
-    </div>
+
+    <div v-else class="empty">Pokemon not found</div>
   </div>
 </template>
 
@@ -22,9 +27,11 @@
 import pokemons from '@/assets/pokemons.json'
 
 export default {
+  name: 'PokemonDetails',
+
   props: {
     id: {
-      type: [Number, String],
+      type: [String, Number],
       required: true
     }
   },
@@ -36,27 +43,33 @@ export default {
         pokemon => pokemon.id === id
       )
     }
+  },
+
+  created () {
+    console.log(this.$route.params)
+  },
+
+  methods: {
+    toggleFavorite () {
+      this.$emit('toggle-favorite', this.id)
+    }
   }
 }
 </script>
 
 <style lang="stylus" scoped>
 @import '~@/style/imports'
-
 .pokemon-details
   background $color-grey
   border-radius $br
   margin $padding
   padding $padding
-
 .id
   .symbol
     color $color-grey-dark
-
 .name
   font-size 2em
   font-weight lighter
-
 .preview
   width 192px
   height @width

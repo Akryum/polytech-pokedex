@@ -1,11 +1,23 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link>
+      <router-link :to="{ name: 'home' }">Home</router-link>
     </div>
-    <router-view/>
+    <router-view @toggle-favorite="onToggleFavorite()"/>
   </div>
 </template>
+
+<script>
+export default {
+  name: 'App',
+
+  methods: {
+    onToggleFavorite () {
+      console.log('test')
+    }
+  }
+}
+</script>
 
 <style lang="stylus">
 @import '~@/style/main'
