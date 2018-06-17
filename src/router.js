@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import PokemonList from './components/PokemonList.vue'
-import PokemonDetails from './components/PokemonDetails.vue'
-import NotFound from './components/NotFound.vue'
+import PokemonList from './components/PokemonList'
+import PokemonDetails from './components/PokemonDetails'
+import NotFound from './components/NotFound'
 
 Vue.use(Router)
 
