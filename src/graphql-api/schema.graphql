@@ -1,0 +1,30 @@
+scalar JSON
+
+directive @cacheControl(
+  maxAge: Int,
+  scope: CacheControlScope
+) on OBJECT | FIELD_DEFINITION
+
+enum CacheControlScope {
+  PUBLIC
+  PRIVATE
+}
+
+
+
+
+type Query {
+  # Test query with a parameter
+  hello(name: String): String!
+
+}
+
+type Mutation {
+  myMutation: String!
+
+}
+
+type Subscription {
+  mySub: String!
+
+}
