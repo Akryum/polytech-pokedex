@@ -1,11 +1,13 @@
 const GraphQLJSON = require('graphql-type-json')
+// Connectors
+const pokemons = require('./connectors/pokemons')
 
 module.exports = {
   JSON: GraphQLJSON,
 
   Query: {
-    hello: (root, { name }) => `Hello ${name || 'World'}!`
-
+    pokemons: (root, args, context) => pokemons.list(args, context),
+    pokemon: (root, args, context) => pokemons.find(args, context)
   },
 
   Mutation: {

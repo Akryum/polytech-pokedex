@@ -9,5 +9,6 @@
   "path-autocomplete.pathMappings": {
     "/": "${workspace}/src",
     "@": "${workspace}/src"
-  }
+  },
+  "eslint.enable": true
 }

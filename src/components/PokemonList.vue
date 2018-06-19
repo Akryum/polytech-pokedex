@@ -4,19 +4,32 @@
     <div class="toolbar">
       <input v-model="search" placeholder="Filter...">
     </div>
-    <div class="pokemons">
-      <PokemonListItem
-        v-for="pokemon of displayedPokemons"
-        :key="pokemon.id"
-        :pokemon="pokemon"
-      />
-    </div>
+
+    <BaseLoader v-if="!pokemons"/>
+
+    <template v-else>
+      <div class="pokemons">
+        <PokemonListItem
+          v-for="pokemon of displayedPokemons"
+          :key="pokemon.id"
+          :pokemon="pokemon"
+        />
+      </div>
+
+      <div class="bottom-actions">
+        <BaseLoader v-if="loadingMore"/>
+        <button v-else @click="showMore()">Load more</button>
+      </div>
+    </template>
   </div>
 </template>
 
 <script>
 import PokemonListItem from './PokemonListItem'
-import pokemons from '@/assets/pokemons.json'
+
+import POKEMONS from '../graphql/pokemons.gql'
+
+let page = 0
 
 export default {
   components: {
@@ -25,9 +38,13 @@ export default {
 
   data () {
     return {
-      pokemons,
-      search: ''
+      search: '',
+      loadingMore: false
     }
+  },
+
+  apollo: {
+    pokemons: POKEMONS
   },
 
   computed: {
@@ -39,6 +56,33 @@ export default {
         )
       }
       return this.pokemons
+    }
+  },
+
+  methods: {
+    async showMore () {
+      this.loadingMore = true
+      page++
+      // Fetch more data and transform the original result
+      await this.$apollo.queries.pokemons.fetchMore({
+        // New variables
+        variables: {
+          page
+        },
+        // Transform the previous result with new data
+        updateQuery: (previousResult, { fetchMoreResult }) => {
+          const newPokemons = fetchMoreResult.pokemons
+
+          return {
+            pokemons: [
+              ...previousResult.pokemons,
+              ...newPokemons
+            ]
+          }
+        }
+      })
+
+      this.loadingMore = false
     }
   }
 }

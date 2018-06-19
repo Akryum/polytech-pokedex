@@ -1,6 +1,6 @@
 module.exports = {
   pluginOptions: {
-    graphqlMock: true,
-    apolloEngine: true
+    graphqlMock: false,
+    apolloEngine: false
   }
 }

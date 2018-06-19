@@ -1,22 +1,31 @@
 scalar JSON
 
-directive @cacheControl(
-  maxAge: Int,
-  scope: CacheControlScope
-) on OBJECT | FIELD_DEFINITION
+# directive @cacheControl(
+#   maxAge: Int,
+#   scope: CacheControlScope
+# ) on OBJECT | FIELD_DEFINITION
 
 enum CacheControlScope {
   PUBLIC
   PRIVATE
 }
 
+type Pokemon {
+  id: ID!
+  name: String!
+  hp: Int!
+  attack: Int!
+  defense: Int!
+  types: [PokemonType]!
+}
 
-
+type PokemonType {
+  id: ID!
+}
 
 type Query {
-  # Test query with a parameter
-  hello(name: String): String!
-
+  pokemons (page: Int): [Pokemon]
+  pokemon (id: ID!): Pokemon
 }
 
 type Mutation {

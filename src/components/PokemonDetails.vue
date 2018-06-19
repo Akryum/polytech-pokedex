@@ -1,16 +1,28 @@
 <template>
   <div class="pokemon-details">
+    <BaseLoader v-if="$apollo.loading"/>
+
     <template v-if="pokemon">
       <div class="id">
         <span class="symbol">#</span>
         <span class="number">{{ pokemon.id }}</span>
       </div>
+
       <div class="name">{{ pokemon.name }}</div>
-      <BaseImage
-        :src="pokemon.image"
-        :alt="`Pokemon ${pokemon.id}`"
+
+      <div class="types">
+        <div
+          v-for="type of pokemon.types"
+          :key="type.id"
+          class="type"
+        >{{ type.id }}</div>
+      </div>
+
+      <PokemonImage
+        :pokemon="pokemon"
         class="preview"
       />
+
       <button
         class="toggle-favorite"
         @click="toggleFavorite()"
@@ -24,10 +36,15 @@
 </template>
 
 <script>
-import pokemons from '@/assets/pokemons.json'
+import PokemonImage from './PokemonImage.vue'
+import POKEMON from '../graphql/pokemon.gql'
 
 export default {
   name: 'PokemonDetails',
+
+  components: {
+    PokemonImage
+  },
 
   props: {
     id: {
@@ -36,12 +53,14 @@ export default {
     }
   },
 
-  computed: {
-    pokemon () {
-      const id = parseInt(this.id)
-      return pokemons.find(
-        pokemon => pokemon.id === id
-      )
+  apollo: {
+    pokemon: {
+      query: POKEMON,
+      variables () {
+        return {
+          id: this.id
+        }
+      }
     }
   },
 
@@ -75,4 +94,13 @@ export default {
   height @width
   >>> .image
     image-rendering pixelated
+
+.types
+  display flex
+  .type
+    padding 6px
+    border-radius $br
+    margin-right 4px
+    background $color-grey-dark
+    color white
 </style>

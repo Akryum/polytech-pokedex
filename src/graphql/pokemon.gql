@@ -1,0 +1,13 @@
+#import "./pokemonFragment.gql"
+
+query pokemon ($id: ID!) {
+  pokemon (id: $id) {
+    ...pokemon,
+    hp,
+    attack,
+    defense,
+    types {
+      id
+    }
+  }
+}
