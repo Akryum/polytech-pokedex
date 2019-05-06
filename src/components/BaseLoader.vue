@@ -5,8 +5,6 @@
 </template>
 
 <style lang="stylus" scoped>
-@import '~@/style/imports'
-
 .base-loader
   display flex
   align-items center

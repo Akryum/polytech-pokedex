@@ -58,7 +58,6 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-@import '~@/style/imports'
 .pokemon-details
   background $color-grey
   border-radius $br
