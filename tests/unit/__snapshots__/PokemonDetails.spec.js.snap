@@ -2,9 +2,13 @@
 
 exports[`PokemonDetails snapshot 1`] = `
 <div class="pokemon-details">
-  <div class="id"><span class="symbol">#</span> <span class="number">3</span></div>
-  <div class="name">Venusaur</div>
-  <div data-stub-base-image="" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png" alt="Pokemon 3" class="preview"></div>
+  <div class="id"><span class="symbol">#</span> <span class="number">46</span></div>
+  <div class="name">paras</div>
+  <div class="types">
+    <div class="type">bug</div>
+    <div class="type">grass</div>
+  </div>
+  <div data-stub-base-image="" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/46.png" alt="Pokemon 46" class="preview"></div>
   <button class="toggle-favorite">
     Toggle favorite
   </button>
