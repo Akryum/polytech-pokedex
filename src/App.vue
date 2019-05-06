@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <PokemonList/>
+    <PokemonList />
   </div>
 </template>
 
@@ -8,7 +8,7 @@
 import PokemonList from './components/PokemonList.vue'
 
 export default {
-  name: 'app',
+  name: 'App',
   components: {
     PokemonList
   }

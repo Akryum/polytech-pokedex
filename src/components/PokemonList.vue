@@ -2,7 +2,10 @@
   <div class="pokemon-list">
     <h1>Pokedex</h1>
     <div class="toolbar">
-      <input v-model="search" placeholder="Filter...">
+      <input
+        v-model="search"
+        placeholder="Filter..."
+      >
     </div>
     <div class="pokemons">
       <PokemonListItem

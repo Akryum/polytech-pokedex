@@ -1,6 +1,8 @@
 <template>
   <div class="pokemon-list-item">
-    <div class="name">{{ pokemon.name }}</div>
+    <div class="name">
+      {{ pokemon.name }}
+    </div>
     <BaseImage
       :src="pokemon.image"
       :alt="`Pokemon ${pokemon.id}`"

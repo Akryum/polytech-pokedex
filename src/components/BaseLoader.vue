@@ -1,6 +1,6 @@
 <template>
   <div class="base-loader">
-    <div class="animation"/>
+    <div class="animation" />
   </div>
 </template>
 

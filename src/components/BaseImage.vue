@@ -1,9 +1,9 @@
 <template>
   <div
-    class="base-image"
     :class="{
       loaded
     }"
+    class="base-image"
   >
     <img
       v-bind="$attrs"
@@ -12,7 +12,7 @@
       @load="onLoad"
     >
     <transition name="fade">
-      <BaseLoader v-if="!loaded"/>
+      <BaseLoader v-if="!loaded" />
     </transition>
   </div>
 </template>
