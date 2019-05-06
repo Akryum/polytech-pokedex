@@ -5,7 +5,9 @@
       The page was not found.
     </p>
     <p>
-      <router-link :to="{ name: 'home' }">Go back home</router-link>
+      <router-link :to="{ name: 'home' }">
+        Go back home
+      </router-link>
     </p>
   </div>
 </template>

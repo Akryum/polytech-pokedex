@@ -3,7 +3,9 @@
 exports[`PokemonDetails snapshot 1`] = `
 <div class="pokemon-details">
   <div class="id"><span class="symbol">#</span> <span class="number">3</span></div>
-  <div class="name">Venusaur</div>
+  <div class="name">
+    Venusaur
+  </div>
   <div data-stub-base-image="" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png" alt="Pokemon 3" class="preview"></div>
   <button class="toggle-favorite">
     Toggle favorite
@@ -13,6 +15,8 @@ exports[`PokemonDetails snapshot 1`] = `
 
 exports[`PokemonDetails snapshot: pokemon not found 1`] = `
 <div class="pokemon-details">
-  <div class="empty">Pokemon not found</div>
+  <div class="empty">
+    Pokemon not found
+  </div>
 </div>
 `;

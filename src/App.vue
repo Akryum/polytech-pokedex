@@ -1,9 +1,11 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link :to="{ name: 'home' }">Home</router-link>
+      <router-link :to="{ name: 'home' }">
+        Home
+      </router-link>
     </div>
-    <router-view @toggle-favorite="onToggleFavorite()"/>
+    <router-view @toggle-favorite="onToggleFavorite()" />
   </div>
 </template>
 
