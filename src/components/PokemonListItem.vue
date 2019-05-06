@@ -23,8 +23,6 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-@import '~@/style/imports'
-
 .pokemon-list-item
   display flex
   flex-direction column
