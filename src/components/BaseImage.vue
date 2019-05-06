@@ -12,7 +12,7 @@
       @load="onLoad"
     >
     <transition name="fade">
-      <BaseLoader v-if="!loaded"/>
+      <BaseLoader v-if="!loaded" />
     </transition>
   </div>
 </template>

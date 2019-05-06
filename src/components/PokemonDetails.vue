@@ -5,14 +5,19 @@
         <span class="symbol">#</span>
         <span class="number">{{ pokemon.id }}</span>
       </div>
-      <div class="name">{{ pokemon.name }}</div>
+      <div class="name">
+        {{ pokemon.name }}
+      </div>
       <BaseImage
         :src="pokemon.image"
         :alt="`Pokemon ${pokemon.id}`"
         class="preview"
       />
     </template>
-    <div v-else class="empty">
+    <div
+      v-else
+      class="empty"
+    >
       Pokemon not found
     </div>
   </div>
