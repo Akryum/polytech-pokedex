@@ -1,6 +1,6 @@
 {
-  "name": "polytech-2018-06",
-  "version": "0.1.0",
+  "name": "polytech-pokedex",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
