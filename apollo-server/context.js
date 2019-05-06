@@ -1,10 +1,9 @@
-const { db } = require('./utils/db')
+import { db } from './utils/db'
 
 // Context passed to all resolvers (third argument)
 // req => Query
 // connection => Subscription
-// eslint-disable-next-line no-unused-vars
-module.exports = async (req, connection) => {
+export default async (req, connection) => {
   return {
     db: await db
   }

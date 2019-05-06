@@ -5,6 +5,7 @@
 		"dbaeumer.vscode-eslint",
 		"ionutvmi.path-autocomplete",
 		"octref.vetur",
-		"sysoev.language-stylus"
+		"sysoev.language-stylus",
+		"apollographql.vscode-apollo"
 	]
 }

@@ -1,8 +1,8 @@
-const GraphQLJSON = require('graphql-type-json')
+import GraphQLJSON from 'graphql-type-json'
 // Connectors
-const pokemons = require('./connectors/pokemons')
+import * as pokemons from './connectors/pokemons'
 
-module.exports = {
+export default {
   JSON: GraphQLJSON,
 
   Query: {

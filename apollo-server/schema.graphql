@@ -1,15 +1,5 @@
 scalar JSON
 
-# directive @cacheControl(
-#   maxAge: Int,
-#   scope: CacheControlScope
-# ) on OBJECT | FIELD_DEFINITION
-
-enum CacheControlScope {
-  PUBLIC
-  PRIVATE
-}
-
 type Pokemon {
   id: ID!
   name: String!

@@ -1,5 +1,5 @@
 {
- "schemaPath": "./src/graphql-api/schema.graphql",
+ "schemaPath": "./apollo-server/schema.graphql",
  "includes": ["**/*.gql"],
  "extensions": {
     "endpoints": {

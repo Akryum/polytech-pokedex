@@ -7,13 +7,13 @@ function processPokemon (pokemon) {
   })
 }
 
-exports.list = async ({ page = 0 }, context) => {
+export async function list ({ page = 0 }, context) {
   const result = await context.db.all('SELECT * FROM pokemon_base ORDER BY id LIMIT ?, 50', page * 50)
   result.forEach(processPokemon)
   return result
 }
 
-exports.find = async ({ id }, context) => {
+export async function find ({ id }, context) {
   const result = await context.db.get('SELECT * FROM pokemon_base WHERE id = ?', id)
   processPokemon(result)
   return result
