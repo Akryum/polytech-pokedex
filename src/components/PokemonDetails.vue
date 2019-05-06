@@ -2,7 +2,7 @@
   <div class="pokemon-details">
     <BaseLoader v-if="$apollo.loading"/>
 
-    <template v-if="pokemon">
+    <template v-else-if="pokemon">
       <div class="id">
         <span class="symbol">#</span>
         <span class="number">{{ pokemon.id }}</span>
@@ -77,7 +77,6 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-@import '~@/style/imports'
 .pokemon-details
   background $color-grey
   border-radius $br

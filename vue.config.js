@@ -4,5 +4,12 @@ module.exports = {
       enableMocks: false,
       enableEngine: false
     }
+  },
+  css: {
+    loaderOptions: {
+      stylus: {
+        import: ['~@/style/imports']
+      }
+    }
   }
 }

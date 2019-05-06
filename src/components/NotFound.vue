@@ -11,8 +11,6 @@
 </template>
 
 <style lang="stylus" scoped>
-@import '~@/style/imports'
-
 .not-found
   margin $padding
 </style>
