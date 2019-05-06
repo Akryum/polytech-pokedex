@@ -1,12 +1,12 @@
 <template>
   <router-link
-    class="pokemon-list-item"
     :to="{
       name: 'pokemon',
       params: {
         id: pokemon.id
       }
     }"
+    class="pokemon-list-item"
   >
     <div class="name">{{ pokemon.name }}</div>
     <PokemonImage

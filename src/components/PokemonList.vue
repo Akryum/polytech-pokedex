@@ -2,7 +2,9 @@
   <div class="pokemon-list">
     <h1>Pokedex</h1>
     <div class="toolbar">
-      <input v-model="search" placeholder="Filter...">
+      <input
+        v-model="search"
+        placeholder="Filter...">
     </div>
 
     <BaseLoader v-if="!pokemons"/>
@@ -18,7 +20,9 @@
 
       <div class="bottom-actions">
         <BaseLoader v-if="loadingMore"/>
-        <button v-else @click="showMore()">Load more</button>
+        <button
+          v-else
+          @click="showMore()">Load more</button>
       </div>
     </template>
   </div>

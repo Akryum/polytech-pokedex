@@ -31,7 +31,9 @@
       </button>
     </template>
 
-    <div v-else class="empty">Pokemon not found</div>
+    <div
+      v-else
+      class="empty">Pokemon not found</div>
   </div>
 </template>
 

@@ -1,9 +1,9 @@
 <template>
   <div
-    class="base-image"
     :class="{
       loaded
     }"
+    class="base-image"
   >
     <img
       v-bind="$attrs"
