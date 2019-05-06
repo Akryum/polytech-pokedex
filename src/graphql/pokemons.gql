@@ -1,7 +1,0 @@
-#import "./pokemonFragment.gql"
-
-query pokemons ($page: Int) {
-  pokemons (page: $page) {
-    ...pokemon
-  }
-}

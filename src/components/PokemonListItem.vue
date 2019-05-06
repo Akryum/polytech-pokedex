@@ -18,6 +18,16 @@
 
 <script>
 import PokemonImage from './PokemonImage.vue'
+import gql from 'graphql-tag'
+
+export const fragments = {
+  pokemon: gql`
+    fragment pokemon on Pokemon {
+      id
+      name
+    }
+  `
+}
 
 export default {
   components: {

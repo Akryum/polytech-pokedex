@@ -29,9 +29,8 @@
 </template>
 
 <script>
-import PokemonListItem from './PokemonListItem'
-
-import POKEMONS from '../graphql/pokemons.gql'
+import PokemonListItem, { fragments as PokemonListItemFragments } from './PokemonListItem'
+import gql from 'graphql-tag'
 
 let page = 0
 
@@ -48,7 +47,14 @@ export default {
   },
 
   apollo: {
-    pokemons: POKEMONS
+    pokemons: gql`
+      query pokemons ($page: Int) {
+        pokemons (page: $page) {
+          ...pokemon
+        }
+      }
+      ${PokemonListItemFragments.pokemon}
+    `
   },
 
   computed: {

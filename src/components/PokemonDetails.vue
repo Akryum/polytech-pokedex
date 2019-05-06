@@ -38,8 +38,9 @@
 </template>
 
 <script>
+import gql from 'graphql-tag'
 import PokemonImage from './PokemonImage.vue'
-import POKEMON from '../graphql/pokemon.gql'
+import { fragments as PokemonListItemFragments } from './PokemonListItem.vue'
 
 export default {
   name: 'PokemonDetails',
@@ -57,7 +58,20 @@ export default {
 
   apollo: {
     pokemon: {
-      query: POKEMON,
+      query: gql`
+        query pokemon ($id: ID!) {
+          pokemon (id: $id) {
+            ...pokemon,
+            hp,
+            attack,
+            defense,
+            types {
+              id
+            }
+          }
+        }
+        ${PokemonListItemFragments.pokemon}
+      `,
       variables () {
         return {
           id: this.id

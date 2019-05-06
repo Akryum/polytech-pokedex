@@ -1,4 +1,0 @@
-fragment pokemon on Pokemon {
-  id
-  name
-}
