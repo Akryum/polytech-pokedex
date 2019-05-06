@@ -45,8 +45,6 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-@import '~@/style/imports'
-
 .pokemon-list
   margin $padding
 
